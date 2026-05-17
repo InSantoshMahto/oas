@@ -1,9 +1,4 @@
-import {
-  DocumentOptions,
-  ContactObject,
-  LicenseObject,
-  ServerObject,
-} from "./types";
+import { DocumentOptions } from "./types";
 
 export class DocumentBuilder {
   private options: DocumentOptions = {};
@@ -28,13 +23,13 @@ export class DocumentBuilder {
     return this;
   }
 
-  setContact(contact: ContactObject) {
-    this.options.contact = contact;
+  setContact(name: string, url?: string, email?: string) {
+    this.options.contact = { name, url, email };
     return this;
   }
 
-  setLicense(license: LicenseObject) {
-    this.options.license = license;
+  setLicense(name: string, url?: string) {
+    this.options.license = { name, url };
     return this;
   }
 
