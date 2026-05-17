@@ -5,16 +5,21 @@ address it responsibly.
 
 Reporting a vulnerability
 
-1. Open a new issue on the repository titled `SECURITY: <short description>`.
-2. In the issue body, include:
-   - A clear description of the vulnerability and its impact.
-   - Steps to reproduce the issue (preferably with a minimal PoC).
-   - The versions of the project and the environment where it occurs.
-   - Any other information that could help triage the issue.
+Please report security vulnerabilities through GitHub's private vulnerability
+reporting mechanism (Security Advisories) on this repository:
 
-If you prefer private communication (e.g., for sensitive vulnerabilities), open
-an issue and request private follow-up — maintainers will reach out and
+  https://github.com/InSantoshMahto/oas/security/advisories/new
+
+Alternatively, you can contact the maintainers privately by opening a regular
+issue and explicitly requesting private follow-up — we will reach out to
 coordinate next steps.
+
+When reporting, please include:
+
+  - A clear description of the vulnerability and its impact.
+  - Steps to reproduce the issue (preferably with a minimal proof of concept).
+  - The versions of the project and environment where it occurs.
+  - Any other context that could help triage the issue.
 
 Response
 

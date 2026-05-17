@@ -67,15 +67,15 @@ export class DocumentBuilder {
     return this;
   }
 
-  setContact(contact: any) {
+  setContact(name: string, url?: string, email?: string) {
     if (this.inner && typeof this.inner.setContact === "function")
-      this.inner.setContact(contact);
+      this.inner.setContact(name, url, email);
     return this;
   }
 
-  setLicense(license: any) {
+  setLicense(name: string, url?: string) {
     if (this.inner && typeof this.inner.setLicense === "function")
-      this.inner.setLicense(license);
+      this.inner.setLicense(name, url);
     return this;
   }
 
@@ -113,17 +113,9 @@ export function createDocument(
     typeof swaggerPkg.SwaggerModule.createDocument === "function"
   ) {
     try {
-      // upstream createDocument accepts (app, options, extraModels?) depending on version
-      // we try to forward `options.extraModels` if provided, otherwise call the 2-arg form.
-      if (options && options.extraModels) {
-        return swaggerPkg.SwaggerModule.createDocument(
-          app,
-          config,
-          options.extraModels,
-        );
-      }
-
-      return swaggerPkg.SwaggerModule.createDocument(app, config);
+      // Forward all options (deepScanRoutes, ignoreGlobalPrefix, extraModels, etc.)
+      // to the upstream createDocument as-is.
+      return swaggerPkg.SwaggerModule.createDocument(app, config, options);
     } catch (err) {
       // If upstream fails for some reason, fall back to local generator.
       return localCreateDocument(app, config, options);
