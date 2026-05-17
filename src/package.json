@@ -1,0 +1,32 @@
+{
+  "name": "@insantoshmahto/oas",
+  "version": "0.0.1",
+  "description": "Lightweight OpenAPI 3.x generator (prototype) extracted from @nestjs/swagger",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "clean": "rimraf dist",
+    "test": "node dist/test.js",
+    "prepublishOnly": "npm run build"
+  },
+  "files": [
+    "dist"
+  ],
+  "keywords": [
+    "nestjs",
+    "openapi",
+    "oas",
+    "swagger",
+    "openapi-generator"
+  ],
+  "license": "MIT",
+  "peerDependencies": {
+    "@nestjs/swagger": "*"
+  },
+  "devDependencies": {
+    "typescript": "^5.0.0",
+    "rimraf": "^3.0.0",
+    "@types/node": "^20.0.0"
+  }
+}
