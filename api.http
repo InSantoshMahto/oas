@@ -1,2 +1,0 @@
-# auth
-POST http://localhost:8500/v1/changePassword
