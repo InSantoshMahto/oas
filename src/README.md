@@ -4,13 +4,32 @@ Lightweight OpenAPI 3.x generator extracted as a focused core from `@nestjs/swag
 
 This package provides a minimal public API to build an OpenAPI document programmatically and create a basic OpenAPI object from an application instance. It is intentionally small and designed to be expanded iteratively.
 
-Quick example
+## Quick example
 
 ```ts
 import { DocumentBuilder, createDocument } from '@insantoshmahto/oas';
 
 const config = new DocumentBuilder().setTitle('API').setVersion('1.0.0').build();
 const document = createDocument(app, config, { deepScanRoutes: false });
+```
+
+## Testing
+
+To run the included tests:
+
+```sh
+cd src
+npm install
+npm run build
+npm test
+```
+
+You should see output like:
+
+```
+Generated document:
+{ ...OpenAPI JSON... }
+All tests passed
 ```
 
 Compatibility with `@nestjs/swagger`
