@@ -7,7 +7,7 @@
   "scripts": {
     "build": "tsc -p tsconfig.json",
     "clean": "rimraf dist",
-    "test": "node dist/test.js",
+    "test": "ts-node test/test.ts",
     "prepublishOnly": "npm run build"
   },
   "files": [
@@ -30,8 +30,13 @@
     }
   },
   "devDependencies": {
-    "typescript": "^5.0.0",
-    "rimraf": "^3.0.0",
-    "@types/node": "^20.0.0"
+    "@nestjs/common": "^11.0.0",
+    "@nestjs/core": "^11.0.0",
+    "@nestjs/swagger": "^11.0.0",
+    "@types/node": "^20.0.0",
+    "reflect-metadata": "^0.2.0",
+    "rimraf": "^5.0.0",
+    "ts-node": "^10.9.0",
+    "typescript": "^5.0.0"
   }
 }
